@@ -1,31 +1,35 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  entry: "./src/index.tsx",
-  devtool: "inline-source-map",
+  entry: './src/index.tsx',
+  devtool: 'inline-source-map',
   devServer: {
     historyApiFallback: true,
-    hot: true,
+    hot: true
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: 'babel-loader'
       },
       {
         test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
+        use: 'ts-loader',
+        exclude: /node_modules/
       },
-    ],
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource'
+      }
+    ]
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: ['.tsx', '.ts', '.js']
   },
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
-  },
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
+  }
 };

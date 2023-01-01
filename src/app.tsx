@@ -7,8 +7,14 @@ import {
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom';
+import logo from './assets/images/logo.png';
 
-const Home = () => <div>Home</div>;
+const Home = () => (
+  <div>
+    Home
+    <img src={logo} alt="" />
+  </div>
+);
 const BlogPage = () => <div>blogs</div>;
 
 function App() {

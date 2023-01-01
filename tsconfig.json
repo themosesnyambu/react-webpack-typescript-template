@@ -10,5 +10,11 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@Pages/*": ["./src/pages/*"],
+      "@Images/*": ["./src/assets/images/*"],
+      "@Components/*": ["./src/omponents/*"]
+    }
   }
 }

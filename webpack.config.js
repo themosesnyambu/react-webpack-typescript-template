@@ -1,4 +1,6 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   entry: './src/index.tsx',
@@ -54,7 +56,21 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    fallback: {
+      fs: false
+    },
+    extensions: ['*', '.ts', '.tsx', '.js', '.scss'],
+    plugins: [
+      new TsconfigPathsPlugin({
+        extensions: ['.js', '.jsx', '.json', '.ts', '.tsx']
+      })
+    ],
+    alias: {
+      '@': path.resolve(__dirname, '../', 'src/'),
+      Pages: path.resolve(__dirname, 'src/pages/'),
+      Components: path.resolve(__dirname, 'src/components/'),
+      Images: path.resolve(__dirname, 'src/assets/images')
+    }
   },
   output: {
     filename: 'bundle.js',

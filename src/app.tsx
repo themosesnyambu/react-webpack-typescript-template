@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import logo from './assets/images/logo.svg';
+import { Routes, Route } from 'react-router-dom';
 import PageWrapper from './components/Layout/PageWrapper';
-import BlogPage from './pages/Blogs/BlogPage';
-import Home from './pages/Home/Home';
+import BlogPage from '@Pages/Blogs/BlogPage';
+import Home from '@Pages/Home/Home';
 
 function App() {
   return (
